@@ -69,20 +69,21 @@
     </v-navigation-drawer> -->
     <v-card
         class="d-flex pa-2"
-        style="height:70px; background: #121212; margin: auto;"
+        style="height:100px; background: #121212; margin: auto;"
     >
-        <h1>The Van</h1>
+        <p style="font-size:3em; font-weight:bolder; margin:auto;">The Van</p>
     </v-card>
     <v-card
         class="d-flex pa-1"
         style="width:100%; background: #121212;"
     >
-        <v-tabs centered color="#FFFFFF">
-            <v-tab>319 숏바디</v-tab>
-            <v-tab>519 롱바디</v-tab>
-            <v-tab>519 익스롱</v-tab>
-            <v-tab>위치</v-tab>
-            <v-tab>문의</v-tab>
+        <v-tabs color="#FFFFFF">
+            <v-tab>Model</v-tab>
+            <v-tab>319 Short Body</v-tab>
+            <v-tab>519 Short Body</v-tab>
+            <v-tab>519 Extra Long</v-tab>
+            <v-tab>Location</v-tab>
+            <v-tab>Contact</v-tab>
         </v-tabs>
     </v-card>
     <!-- 컨텐츠 영역 -->

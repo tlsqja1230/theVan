@@ -1,7 +1,7 @@
 <template>
     <v-container grid-list-xl fluid>
         <v-layout row wrap>
-            <v-carousel height="500">
+            <v-carousel height="700">
                 <v-carousel-item
                 v-for="(item,i) in items"
                 :key="i"
@@ -21,100 +21,212 @@
                     </h3>
                 </div>
             </v-card> -->
-            <div style="text-align:center; width: 100%">
+            <div style="width: 100%; margin-left:30px;">
                 <div style="margin-top:100px;">
-                    <h2>319 숏바디</h2>
-                    <hr>
+                    <h1>Models</h1>
                 </div>
-                <div style="width: 33%; float:left;">
-                    <v-card class="ma-3">
-                        <v-carousel height="500">
-                            <v-carousel-item
-                            v-for="(item,i) in items2"
-                            :key="i"
-                            :src="item.src"
-                            reverse-transition="fade-transition"
-                            transition="fade-transition"
-                            ></v-carousel-item>
-                        </v-carousel>
-                    </v-card>
+                <div style="width: 32%; float:left;" class="ma-1">
+                        <v-card
+                        class="mx-auto"
+                        color="grey lighten-4"
+                        max-width="600"
+                        >
+                            <v-img
+                                :aspect-ratio="16/9"
+                                src="@/assets/2468.jpg"
+                            >
+                                <v-btn
+                                absolute
+                                class="black--text"
+                                large
+                                left
+                                bottom
+                                outlined
+                                >
+                                    <h5>319 short</h5>
+                                </v-btn>
+                            </v-img>
+                        </v-card>
                 </div>
-                <div style="width: 33%; float:left;">
-                    <v-card class="ma-3">
-                        <v-carousel height="500">
-                            <v-carousel-item
-                            v-for="(item,i) in items3"
-                            :key="i"
-                            :src="item.src"
-                            reverse-transition="fade-transition"
-                            transition="fade-transition"
-                            ></v-carousel-item>
-                        </v-carousel>
-                    </v-card>
+                <div style="width: 32%; float:left;" class="ma-1">
+                        <v-card
+                        class="mx-auto"
+                        color="grey lighten-4"
+                        max-width="600"
+                        >
+                            <v-img
+                                :aspect-ratio="16/9"
+                                src="@/assets/ggg.jpg"
+                            >
+                                <v-btn
+                                absolute
+                                class="black--text"
+                                large
+                                left
+                                bottom
+                                outlined
+                                >
+                                    <h5>319 short</h5>
+                                </v-btn>
+                            </v-img>
+                        </v-card>
                 </div>
-                <div style="width: 33%; float:left;">
-                    <v-card class="ma-3">
-                        <v-carousel height="500">
-                            <v-carousel-item
-                            v-for="(item,i) in items3"
-                            :key="i"
-                            :src="item.src"
-                            reverse-transition="fade-transition"
-                            transition="fade-transition"
-                            ></v-carousel-item>
-                        </v-carousel>
-                    </v-card>
+                <div style="width: 32%; float:left;" class="ma-1">
+                        <v-card
+                        class="mx-auto"
+                        color="grey lighten-4"
+                        max-width="600"
+                        >
+                            <v-img
+                                :aspect-ratio="16/9"
+                                src="@/assets/mainimg.png"
+                            >
+                                <v-btn
+                                absolute
+                                class="black--text"
+                                large
+                                left
+                                bottom
+                                outlined
+                                >
+                                    <h5>319 short</h5>
+                                </v-btn>
+                            </v-img>
+                        </v-card>
                 </div>
             </div>
-            <div style="text-align:center; width: 100%">
+
+
+            <div style="width: 100%; margin-left:30px;">
                 <div style="margin-top:100px;">
-                    <h2>519 숏바디</h2>
-                    <hr>
+                    <h1>Models</h1>
                 </div>
-                <div style="width: 33%; float:left;">
-                    <v-card class="ma-3">
-                        <v-carousel height="500">
-                            <v-carousel-item
-                            v-for="(item,i) in items2"
-                            :key="i"
-                            :src="item.src"
-                            reverse-transition="fade-transition"
-                            transition="fade-transition"
-                            ></v-carousel-item>
-                        </v-carousel>
-                    </v-card>
+                <div style="width: 32%; float:left;" class="ma-1">
+                    <v-hover v-slot:default="{ hover }">
+                        <v-card
+                        class="mx-auto"
+                        color="grey lighten-4"
+                        max-width="600"
+                        >
+                        <v-img
+                            :aspect-ratio="16/9"
+                            src="@/assets/2468.jpg"
+                        >
+                            <v-expand-transition>
+                            <div
+                                v-if="hover"
+                                class="d-flex transition-fast-in-fast-out black darken-2 v-card--reveal display-3 white--text"
+                                style="height: 100%;"
+                            >
+                                319 short body
+                            </div>
+                            </v-expand-transition>
+                        </v-img>
+                        <v-card-text
+                            class="pt-6"
+                            style="position: relative;"
+                            >
+                            <v-btn
+                            absolute
+                            class="black--text"
+                            large
+                            right
+                            top
+                            outlined
+                            >
+                                <h5>나만의 Van 만들기</h5>
+                            </v-btn>
+                            <div class="font-weight-bolder black--text title mb-2">319 short body</div>
+                        </v-card-text>
+                        </v-card>
+                    </v-hover>
                 </div>
-                <div style="width: 33%; float:left;">
-                    <v-card class="ma-3">
-                        <v-carousel height="500">
-                            <v-carousel-item
-                            v-for="(item,i) in items3"
-                            :key="i"
-                            :src="item.src"
-                            reverse-transition="fade-transition"
-                            transition="fade-transition"
-                            ></v-carousel-item>
-                        </v-carousel>
-                    </v-card>
+                <div style="width: 32%; float:left;" class="ma-1">
+                    <v-hover v-slot:default="{ hover }">
+                        <v-card
+                        class="mx-auto"
+                        color="grey lighten-4"
+                        max-width="600"
+                        >
+                        <v-img
+                            :aspect-ratio="16/9"
+                            src="@/assets/mainimg.png"
+                        >
+                            <v-expand-transition>
+                            <div
+                                v-if="hover"
+                                class="d-flex transition-fast-in-fast-out black darken-2 v-card--reveal display-3 white--text"
+                                style="height: 100%;"
+                            >
+                                519 short body
+                            </div>
+                            </v-expand-transition>
+                        </v-img>
+                        <v-card-text
+                            class="pt-6"
+                            style="position: relative;"
+                            >
+                            <v-btn
+                            absolute
+                            class="black--text"
+                            large
+                            right
+                            top
+                            outlined
+                            >
+                                <h5>나만의 Van 만들기</h5>
+                            </v-btn>
+                            <div class="font-weight-bolder black--text title mb-2">519 short body</div>
+                        </v-card-text>
+                        </v-card>
+                    </v-hover>
                 </div>
-                <div style="width: 33%; float:left;">
-                    <v-card class="ma-3">
-                        <v-carousel height="500">
-                            <v-carousel-item
-                            v-for="(item,i) in items3"
-                            :key="i"
-                            :src="item.src"
-                            reverse-transition="fade-transition"
-                            transition="fade-transition"
-                            ></v-carousel-item>
-                        </v-carousel>
-                    </v-card>
+                <div style="width: 32%; float:left;" class="ma-1">
+                    <v-hover v-slot:default="{ hover }">
+                        <v-card
+                        class="mx-auto"
+                        color="grey lighten-4"
+                        max-width="600"
+                        >
+                        <v-img
+                            :aspect-ratio="16/9"
+                            src="@/assets/ggg.jpg"
+                        >
+                            <v-expand-transition>
+                            <div
+                                v-if="hover"
+                                class="d-flex transition-fast-in-fast-out black darken-2 v-card--reveal display-3 white--text"
+                                style="height: 100%;"
+                            >
+                                519 long body
+                            </div>
+                            </v-expand-transition>
+                        </v-img>
+                        <v-card-text
+                            class="pt-6"
+                            style="position: relative;"
+                            >
+                            <v-btn
+                            absolute
+                            class="black--text"
+                            large
+                            right
+                            top
+                            outlined
+                            >
+                                <h5>나만의 Van 만들기</h5>
+                            </v-btn>
+                            <div class="font-weight-bolder black--text title mb-2">519 long body</div>
+                        </v-card-text>
+                        </v-card>
+                    </v-hover>
                 </div>
             </div>
-            <div style="text-align:center; width: 100%">
+
+
+            <div style="width: 100%; margin-left:30px;">
                 <div style="margin-top:100px;">
-                    <h2>519 익스롱</h2>
-                    <hr>
+                    <h1>Models</h1>
                 </div>
                 <div style="width: 33%; float:left;">
                     <v-card class="ma-3">
@@ -233,5 +345,13 @@ export default {
     width:100%;
     text-align: center;
     padding: 20px;
+}
+.v-card--reveal {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: .5;
+  position: absolute;
+  width: 100%;
 }
 </style>
