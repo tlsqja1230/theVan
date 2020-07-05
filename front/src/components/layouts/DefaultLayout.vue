@@ -67,17 +67,17 @@
             </template>
         </v-list>
     </v-navigation-drawer> -->
-    <v-card
+    <div
         class="d-flex pa-2"
-        style="height:100px; background: #121212; margin: auto;"
+        style="height:100px; margin: auto;"
     >
-        <p style="font-size:3em; font-weight:bolder; margin:auto;">The Van</p>
-    </v-card>
+        <img src="@/assets/thevan.jpeg" style="width:200px">
+    </div>
     <v-card
         class="d-flex pa-1"
-        style="width:100%; background: #121212;"
+        style="width:100%;"
     >
-        <v-tabs color="#FFFFFF">
+        <v-tabs color="dark">
             <v-tab>Model</v-tab>
             <v-tab>319 Short Body</v-tab>
             <v-tab>519 Short Body</v-tab>
@@ -90,6 +90,11 @@
     <v-main>
         <slot></slot>
     </v-main>
+
+    <!-- footer영역 -->
+    <v-card style="height:100px;">
+
+    </v-card>
 </v-app>
 </template>
 
