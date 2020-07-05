@@ -381,7 +381,7 @@
                     <v-card class="ma-3">
                         <v-carousel height="400">
                             <v-carousel-item
-                            v-for="(item,i) in items3"
+                            v-for="(item,i) in items4"
                             :key="i"
                             :src="item.src"
                             reverse-transition="fade-transition"
@@ -466,13 +466,19 @@ export default {
                 { src: require('@/assets/3524.jpg')},
             ],
             items2: [
-                { src: require('@/assets/ggg.jpg')},
+                { src: require('@/assets/7.jpeg')},
                 { src: require('@/assets/2468.jpg')},
                 { src: require('@/assets/3524.jpg')},
                 { src: require('@/assets/mainimg.png')},
             ],
             items3: [
-                { src: require('@/assets/2468.jpg')},
+                { src: require('@/assets/8.jpeg')},
+                { src: require('@/assets/ggg.jpg')},
+                { src: require('@/assets/3524.jpg')},
+                { src: require('@/assets/mainimg.png')},
+            ],
+            items4: [
+                { src: require('@/assets/9.jpeg')},
                 { src: require('@/assets/ggg.jpg')},
                 { src: require('@/assets/3524.jpg')},
                 { src: require('@/assets/mainimg.png')},
