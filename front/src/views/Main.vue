@@ -440,6 +440,44 @@
             </div>
 
 
+
+
+            <!-- 다이얼로그 -->
+            <div class="text-center">
+                <v-dialog
+                v-model="dialog"
+                width="500"
+                >
+                <v-card>
+                    <v-card-title
+                    class="headline grey lighten-2"
+                    primary-title
+                    >
+                    notice
+                    </v-card-title>
+
+                    <v-card-text class="mt-3">
+                        <v-img
+                            src="@/assets/popup.jpg"
+                        >
+                        </v-img>
+                    </v-card-text>
+
+                    <v-divider></v-divider>
+
+                    <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                        color="primary"
+                        text
+                        @click="dialog = false"
+                    >
+                        close
+                    </v-btn>
+                    </v-card-actions>
+                </v-card>
+                </v-dialog>
+            </div>
         </v-layout>
     </v-container>
 </template>
@@ -483,6 +521,7 @@ export default {
                 { src: require('@/assets/3524.jpg')},
                 { src: require('@/assets/mainimg.png')},
             ],
+            dialog: true,
         }
     },
     beforeRouteEnter (to, from, next) {
