@@ -1,6 +1,6 @@
 <template>
     <v-container grid-list-xl fluid>
-        <v-layout row wrap>
+        <v-layout row wrap style="padding:0px 20px 20px 20px;">
             <v-carousel height="700">
                 <v-carousel-item
                 v-for="(item,i) in items"
@@ -23,11 +23,11 @@
             </v-card>
             
             
-            <!-- <div style="width: 100%; margin-left:30px; margin-top:100px;">
+            <!-- <div class="content-container">
                 <div>
                     <h1>Models</h1>
                 </div>
-                <div style="width: 32%; float:left;" class="ma-1">
+                <div class="content-layout ma-1">
                         <v-card
                         class="mx-auto"
                         color="grey lighten-4"
@@ -50,7 +50,7 @@
                             </v-img>
                         </v-card>
                 </div>
-                <div style="width: 32%; float:left;" class="ma-1">
+                <div class="content-layout ma-1">
                         <v-card
                         class="mx-auto"
                         color="grey lighten-4"
@@ -73,7 +73,7 @@
                             </v-img>
                         </v-card>
                 </div>
-                <div style="width: 32%; float:left;" class="ma-1">
+                <div class="content-layout ma-1">
                         <v-card
                         class="mx-auto"
                         color="grey lighten-4"
@@ -99,11 +99,11 @@
             </div> -->
 
 
-            <div style="width: 100%; margin-left:30px; margin-top:100px;">
+            <div class="content-container">
                 <div>
                     <h1>Models</h1>
                 </div>
-                <div style="width: 32%; float:left;" class="ma-1">
+                <div class="content-layout ma-1">
                     <v-hover v-slot:default="{ hover }">
                         <v-card
                         class="mx-auto"
@@ -143,7 +143,7 @@
                         </v-card>
                     </v-hover>
                 </div>
-                <div style="width: 32%; float:left;" class="ma-1">
+                <div class="content-layout ma-1">
                     <v-hover v-slot:default="{ hover }">
                         <v-card
                         class="mx-auto"
@@ -183,7 +183,7 @@
                         </v-card>
                     </v-hover>
                 </div>
-                <div style="width: 32%; float:left;" class="ma-1">
+                <div class="content-layout ma-1">
                     <v-hover v-slot:default="{ hover }">
                         <v-card
                         class="mx-auto"
@@ -223,7 +223,7 @@
                         </v-card>
                     </v-hover>
                 </div>
-                <div style="width: 32%; float:left;" class="ma-1">
+                <div class="content-layout ma-1">
                     <v-hover v-slot:default="{ hover }">
                         <v-card
                         class="mx-auto"
@@ -263,7 +263,7 @@
                         </v-card>
                     </v-hover>
                 </div>
-                <div style="width: 32%; float:left;" class="ma-1">
+                <div class="content-layout ma-1">
                     <v-hover v-slot:default="{ hover }">
                         <v-card
                         class="mx-auto"
@@ -303,7 +303,7 @@
                         </v-card>
                     </v-hover>
                 </div>
-                <div style="width: 32%; float:left;" class="ma-1">
+                <div class="content-layout ma-1">
                     <v-hover v-slot:default="{ hover }">
                         <v-card
                         class="mx-auto"
@@ -347,11 +347,11 @@
 
 
 
-            <div style="width: 100%; margin-left:30px; margin-top:100px;">
+            <div class="content-container">
                 <div>
                     <h1>LifeStyle</h1>
                 </div>
-                <div style="width: 32%; float:left;">
+                <div class="content-layout">
                     <v-card class="ma-3">
                         <v-carousel height="400">
                             <v-carousel-item
@@ -364,7 +364,7 @@
                         </v-carousel>
                     </v-card>
                 </div>
-                <div style="width: 32%; float:left;">
+                <div class="content-layout">
                     <v-card class="ma-3">
                         <v-carousel height="400">
                             <v-carousel-item
@@ -377,7 +377,7 @@
                         </v-carousel>
                     </v-card>
                 </div>
-                <div style="width: 32%; float:left;">
+                <div class="content-layout">
                     <v-card class="ma-3">
                         <v-carousel height="400">
                             <v-carousel-item
@@ -392,7 +392,7 @@
                 </div>
             </div>
 
-            <div style="width: 100%; margin-top:100px;">
+            <div class="content-container">
                 <div style="width: 50%; float:left; text-align:center;">
                         <v-card
                         class="mx-auto"
@@ -530,7 +530,6 @@ export default {
     created() {
     },
     mounted() {
-        this.socketConnect()
     },
     updated() {
     },
@@ -542,26 +541,17 @@ export default {
             }
             this.chartList.push(obj)
         },
-        deleteChart(index){
-            this.chartList.splice(index,1);
-        },
-        socketConnect() {
-            // socket연결
-            let socket = this.$io('http://localhost:3001')
-            this.$store.dispatch('connectSocket',socket);
-        },
     },
 }
 </script>
 <style scoped>
-.layout_dashboard {
-    padding: 20px;
+.content-container {
+    width: 100%;
+    margin-top:100px;
 }
-.div_top {
-    height:85px;
-    width:100%;
-    text-align: center;
-    padding: 20px;
+.content-layout {
+    width: 32%;
+    float:left;
 }
 .v-card--reveal {
   align-items: center;
@@ -570,5 +560,11 @@ export default {
   opacity: .5;
   position: absolute;
   width: 100%;
+}
+@media ( max-width: 1100px ) {
+    .content-layout {
+        width: auto;
+        float: none;
+    }
 }
 </style>

@@ -73,19 +73,14 @@
     >
         <img src="@/assets/thevan.jpeg" style="width:200px">
     </div>
-    <v-card
-        class="d-flex pa-1"
-        style="width:100%;"
-    >
-        <v-tabs color="dark">
-            <v-tab>Model</v-tab>
-            <v-tab>319 Short Body</v-tab>
-            <v-tab>519 Short Body</v-tab>
-            <v-tab>519 Extra Long</v-tab>
-            <v-tab>Location</v-tab>
-            <v-tab>Contact</v-tab>
-        </v-tabs>
-    </v-card>
+    <v-tabs show-arrows centered class="mb-1" color="dark" style="">
+        <v-tab>모델</v-tab>
+        <v-tab>갤러리</v-tab>
+        <v-tab>커스터마이징</v-tab>
+        <v-tab>전시장</v-tab>
+        <v-tab>문의</v-tab>
+        <v-tab>회사소개</v-tab>
+    </v-tabs>
     <!-- 컨텐츠 영역 -->
     <v-main>
         <slot></slot>
