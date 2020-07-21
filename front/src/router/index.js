@@ -1,14 +1,42 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Main from '../views/Main.vue'
+import Model from '../views/Model.vue'
+import Gallery from '../views/Gallery.vue'
+import Customizing from '../views/Customizing.vue'
+import Company from '../views/Company.vue'
+import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
-    name: 'Main',
-    component: Main,
+    name: 'Model',
+    component: Model,
+    meta: {layout : 'DefaultLayout'}
+  },
+  {
+    path: '/',
+    name: 'Gallery',
+    component: Gallery,
+    meta: {layout : 'DefaultLayout'}
+  },
+  {
+    path: '/',
+    name: 'Customizing',
+    component: Customizing,
+    meta: {layout : 'DefaultLayout'}
+  },
+  {
+    path: '/',
+    name: 'Company',
+    component: Company,
+    meta: {layout : 'DefaultLayout'}
+  },
+  {
+    path: '/',
+    name: 'Contact',
+    component: Contact,
     meta: {layout : 'DefaultLayout'}
   },
 ]
