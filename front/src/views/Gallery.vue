@@ -2,15 +2,24 @@
     <v-container grid-list-xl fluid>
         <v-layout row wrap style="padding:0px 20px 20px 20px;">
             <div class="content-container">
-                <div class="content-layout" v-for="(items, index) in itemArr" :key="index">
-                    <v-carousel show-arrows-on-hover height="400">
-                        <v-carousel-item
+                <div class="content-layout" v-for="(item, index) in modelsItem" :key="index">
+                        <v-card
+                        color="grey lighten-4"
+                        max-width="600"
                         @click="openLayer(item)"
-                        v-for="(item,i) in items"
-                        :key="i"
-                        :src="item.src"
-                        ></v-carousel-item>
-                    </v-carousel>
+                        >
+                            <v-img
+                                :aspect-ratio="16/9"
+                                :src="item.image"
+                            >
+                                <div
+                                    class="d-flex transition-fast-in-fast-out black darken-2 v-card--reveal display-3 white--text"
+                                    style="height: 100%;"
+                                >
+                                    <p style="font-size:3rem;">{{item.carModel}}</p>
+                                </div>
+                            </v-img>
+                        </v-card>
                 </div>
             </div>
             <GalleryDialog @dialogResult="dialogResult" :isDialog="isDialog" :contents="selItem"></GalleryDialog>
@@ -32,43 +41,67 @@ export default {
     },
     data() {
         return {
-            itemArr : [
-                [
-                    { src: require('@/assets/7.jpeg'), carModel: '319 short body'},
-                    { src: require('@/assets/2468.jpg'), carModel: '319 short body'},
-                    { src: require('@/assets/3524.jpg'), carModel: '319 short body'},
-                    { src: require('@/assets/mainimg.png'), carModel: '319 short body'},
-                ],
-                [
-                    { src: require('@/assets/8.jpeg'), carModel: '519 short body'},
-                    { src: require('@/assets/ggg.jpg'), carModel: '519 short body'},
-                    { src: require('@/assets/3524.jpg'), carModel: '519 short body'},
-                    { src: require('@/assets/mainimg.png'), carModel: '519 short body'},
-                ],
-                [
-                    { src: require('@/assets/9.jpeg'), carModel: '519 long body'},
-                    { src: require('@/assets/ggg.jpg'), carModel: '519 long body'},
-                    { src: require('@/assets/3524.jpg'), carModel: '519 long body'},
-                    { src: require('@/assets/mainimg.png'), carModel: '519 long body'},
-                ],
-                [
-                    { src: require('@/assets/3524.jpg'), carModel: '캠핑카'},
-                    { src: require('@/assets/2468.jpg'), carModel: '캠핑카'},
-                    { src: require('@/assets/7.jpeg'), carModel: '캠핑카'},
-                    { src: require('@/assets/mainimg.png'), carModel: '캠핑카'},
-                ],
-                [
-                    { src: require('@/assets/mainimg.png'), carModel: '장외차량'},
-                    { src: require('@/assets/8.jpeg'), carModel: '장외차량'},
-                    { src: require('@/assets/ggg.jpg'), carModel: '장외차량'},
-                    { src: require('@/assets/3524.jpg'), carModel: '장외차량'},
-                ],
-                [
-                    { src: require('@/assets/ggg.jpg'), carModel: '카니발 하이리무진'},
-                    { src: require('@/assets/9.jpeg'), carModel: '카니발 하이리무진'},
-                    { src: require('@/assets/3524.jpg'), carModel: '카니발 하이리무진'},
-                    { src: require('@/assets/mainimg.png'), carModel: '카니발 하이리무진'},
-                ]
+            modelsItem : [
+                {image: require('@/assets/2468.jpg'), carModel: '319 short body',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/mainimg.png'), carModel: '519 short body',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/ggg.jpg'), carModel: '519 long body',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/2468.jpg'), carModel: '캠핑카',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/3524.jpg'), carModel: '장외차량',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/ggg.jpg'), carModel: '카니발 하이리무진',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                }
             ],
             isDialog: false,
             selItem: {}
@@ -95,18 +128,4 @@ export default {
 }
 </script>
 <style scoped>
-.content-container {
-    width: 100%;
-}
-.content-layout {
-    width: calc(100%/3);
-    padding: 5px;
-    float:left;
-}
-@media ( max-width: 1100px ) {
-    .content-layout {
-        width: auto;
-        float: none;
-    }
-}
 </style>

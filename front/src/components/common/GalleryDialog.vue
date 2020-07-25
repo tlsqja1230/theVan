@@ -2,31 +2,37 @@
   <v-row justify="center">
     <v-dialog v-model="isDialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <v-card>
-        <v-toolbar dark>
-          <v-btn icon dark @click="onClickClose()">
+        <v-toolbar>
+          <v-btn icon @click="onClickClose()">
             <v-icon>mdi-close</v-icon>
           </v-btn>
           <v-toolbar-title>{{contents.carModel}}</v-toolbar-title>
           <v-spacer></v-spacer>
         </v-toolbar>
-        <div class="image-layout">
-          <v-card
-          class="mx-auto"
-          color="grey lighten-4"
-          >
-              <v-img
-                  :aspect-ratio="4/3"
-                  :src="contents.src"
-                  style="cursor:pointer;"
-              >
-              </v-img>
-          </v-card>
+        <div class="pa-15">
+           <v-carousel cycle height="600" class="">
+                <v-carousel-item
+                v-for="(item,i) in contents.imageArr"
+                :key="i"
+                :src="item"
+                ></v-carousel-item>
+            </v-carousel>
         </div>
-        <div class="text-layout">
-          <h2>{{contents.carModel}}</h2>
-          <div style="margin-top: 30px">
-            <p>독일 다임러 AG 산하의 메르세데스-벤츠에서 1995년부터 생산 중인 세미보닛 타입 LCV 제품군. 차량총중량(GVW) 3 ~ 5톤 사이를 담당하는 라인업으로 투어러 모델부터 패널밴, 크류밴, 카고트럭, 기타특장 모델 등 다양한 분야에서 광범위하게 운용하고 있다. 차량의 세부 모델 구분은 세자리 숫자로 이루어지는데 앞의 한자리는 차량총중량(단위/톤), 뒤의 두자리는 엔진출력(단위/10마력[1])을 뜻한다(예: 스프린터 319 → 차량총중량 3톤, 190마력 모델).</p>
-          </div>
+        <div style="padding: 0px 100px 100px 100px;">
+          <v-card class="mx-auto pb-5" max-width="600">
+            <v-card-title style="font-size:1.5rem; font-weight:bold;">{{contents.carModel}}</v-card-title>
+            <v-divider></v-divider>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">전장x전폭x전고(mm)</span><span style="float:right;">7367 x 2020 x 2705</span></v-card-text>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">축간거리(mm)</span><span style="float:right;">4325</span></v-card-text>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">차량 총 중량(kg)</span><span style="float:right;">5000</span></v-card-text>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">엔진 형식</span><span style="float:right;">OM642 V6</span></v-card-text>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">엔진 최고출력(ps)</span><span style="float:right;">190</span></v-card-text>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">엔진 최대토크(nm)</span><span style="float:right;">440</span></v-card-text>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">총 배기량(cc)</span><span style="float:right;">2987</span></v-card-text>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">구동방식</span><span style="float:right;">후륜</span></v-card-text>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">변속기</span><span style="float:right;">7G-TRONIC</span></v-card-text>
+            <v-card-text style="font-size:1.2rem;"><span style="float:left; font-weight:bold;">연료탱크(L)</span><span style="float:right;">93</span></v-card-text>
+          </v-card>
         </div>
       </v-card>
     </v-dialog>
@@ -85,6 +91,18 @@
     },
     data () {
       return {
+        items: [
+          {
+            name: 'Frozen Yogurt',
+            calories: 159,
+            fat: 6.0,
+            carbs: 24,
+            protein: 4.0,
+            sodium: 87,
+            calcium: '14%',
+            iron: '1%',
+          }
+        ]
       }
     },
     computed: {
@@ -99,14 +117,4 @@
   }
 </script>
 <style scoped>
-.image-layout {
-    width: 50%;
-    float:left;
-    padding: 100px;
-}
-.text-layout {
-    width: 50%;
-    float: right;
-    padding: 100px;
-}
 </style>

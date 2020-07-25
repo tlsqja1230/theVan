@@ -1,0 +1,153 @@
+.content-container {
+    width: 100%;
+}
+.content-layout {
+    width: calc(100%/3);
+    padding: 5px;
+    float:left;
+}
+.v-card--reveal {
+    align-items: center;
+    bottom: 0;
+    justify-content: center;
+    opacity: .5;
+    position: absolute;
+    width: 100%;
+}
+/*
+##Device = Desktops
+##Screen = 1281px to higher resolution desktops
+##Device = 데스크탑
+##Screen = 1281px 이상 해상도 데스크탑
+*/
+
+@media (min-width: 1281px) {
+    html {
+        font-size: 16px;
+    }
+    .main_carousel1 {
+        display: block;
+    }
+    .main_carousel2 {
+        display: none;
+    }
+    .main_carousel3 {
+        display: none;
+    }
+    .main_carousel4 {
+        display: none;
+    }
+}
+    
+/*
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+##Device = 랩탑, 데스크탑
+##Screen = 1025px에서 1280px 사이
+*/
+    
+@media (min-width: 1025px) and (max-width: 1280px) {
+    html {
+        font-size: 14px;
+    }
+    .main_carousel1 {
+        display: block;
+    }
+    .main_carousel2 {
+        display: none;
+    }
+    .main_carousel3 {
+        display: none;
+    }
+    .main_carousel4 {
+        display: none;
+    }
+}
+    
+/*
+##Device = Tablets, Ipads (portrait),
+##Screen = B/w 768px to 1024px
+##Device = 태블릿, 아이패드(세로),
+##Screen = 768px에서 1024px 사이
+*/
+    
+@media (min-width: 768px) and (max-width: 1024px) {
+    html {
+        font-size: 12px;
+    }
+    .main_carousel1 {
+        display: none;
+    }
+    .main_carousel2 {
+        display: block;
+    }
+    .main_carousel3 {
+        display: none;
+    }
+    .main_carousel4 {
+        display: none;
+    }
+    .content-layout {
+        width: calc(100%/2);
+        padding: 5px;
+        float:left;
+    }
+}
+    
+/*
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+##Device = 저해상도 태블릿, 모바일(가로)
+##Screen = 481px에서 767px 사이
+*/
+    
+@media (min-width: 481px) and (max-width: 767px) {
+    html {
+        font-size: 10px;
+    }
+    .main_carousel1 {
+        display: none;
+    }
+    .main_carousel2 {
+        display: none;
+    }
+    .main_carousel3 {
+        display: block;
+    }
+    .main_carousel4 {
+        display: none;
+    }
+    .content-layout {
+        width: auto;
+        float: none;
+    }
+}
+    
+/*
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+##Device = 대부분의 스마트폰 모바일 기기(세로)
+##Screen = 320px에서 479px 사이
+*/
+    
+@media (max-width: 480px) {
+    html {
+        font-size: 10px;
+    }
+    .main_carousel1 {
+        display: none;
+    }
+    .main_carousel2 {
+        display: none;
+    }
+    .main_carousel3 {
+        display: none;
+    }
+    .main_carousel4 {
+        display: block;
+    }
+    .content-layout {
+        width: auto;
+        float: none;
+    }
+}

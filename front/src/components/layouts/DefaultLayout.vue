@@ -87,12 +87,34 @@
     </v-main>
 
     <!-- footer영역 -->
-    <v-card style="height:100px;">
+    <v-footer
+        dark
+        padless
+        class="mt-15"
+    >
+        <v-card
+        flat
+        tile
+        class="lighten-1 white--text text-center"
+         style="width:100%;"
+        >
+            <v-card-text class="white--text pt-5">
+                <h2>(주)더밴</h2><br>
+                대표자: 최영문<br>
+                위치: 서울특별시 강남구 헌릉로570길32-2 아이디타워<br>
+                전화번호: 1899-0260<br>
+                사업자등록번호: 102-81-29767<br>
+            </v-card-text>
 
-    </v-card>
+            <v-divider></v-divider>
+
+            <v-card-text class="white--text">
+                {{ new Date().getFullYear() }} — <strong>copyright© TheVan</strong>
+            </v-card-text>
+        </v-card>
+    </v-footer>       
 </v-app>
 </template>
-
 <script>
   export default {
     name: 'DefaultLayout',
@@ -134,6 +156,12 @@
         //   { icon: 'mdi-help-circle', text: 'Help' },
         //   { icon: 'mdi-cellphone-link', text: 'App downloads' },
         //   { icon: 'mdi-keyboard', text: 'Go to the old version' },
+        ],
+        icons: [
+            'mdi-facebook',
+            'mdi-twitter',
+            'mdi-linkedin',
+            'mdi-instagram',
         ],
       }
     },

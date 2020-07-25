@@ -1,7 +1,28 @@
 <template>
     <v-container grid-list-xl fluid>
         <v-layout row wrap style="padding:0px 20px 20px 20px;">
-            <v-carousel cycle height="700">
+            <v-carousel cycle height="600" class="main_carousel1">
+                <v-carousel-item
+                v-for="(item,i) in mainSrc"
+                :key="i"
+                :src="item.src"
+                ></v-carousel-item>
+            </v-carousel>
+            <v-carousel cycle height="500" class="main_carousel2">
+                <v-carousel-item
+                v-for="(item,i) in mainSrc"
+                :key="i"
+                :src="item.src"
+                ></v-carousel-item>
+            </v-carousel>
+            <v-carousel cycle height="400" class="main_carousel3">
+                <v-carousel-item
+                v-for="(item,i) in mainSrc"
+                :key="i"
+                :src="item.src"
+                ></v-carousel-item>
+            </v-carousel>
+            <v-carousel cycle height="300" class="main_carousel4">
                 <v-carousel-item
                 v-for="(item,i) in mainSrc"
                 :key="i"
@@ -238,26 +259,4 @@ export default {
 }
 </script>
 <style scoped>
-.content-container {
-    width: 100%;
-}
-.content-layout {
-    width: calc(100%/3);
-    padding: 5px;
-    float:left;
-}
-.v-card--reveal {
-  align-items: center;
-  bottom: 0;
-  justify-content: center;
-  opacity: .5;
-  position: absolute;
-  width: 100%;
-}
-@media ( max-width: 1100px ) {
-    .content-layout {
-        width: auto;
-        float: none;
-    }
-}
 </style>

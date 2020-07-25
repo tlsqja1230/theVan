@@ -3,7 +3,7 @@
       <slot></slot>
     </component>
 </template>
-
+<style src="@/css/common.css"></style>
 <script>
   import DefaultLayout from '@/components/layouts/DefaultLayout.vue'
   export default {
