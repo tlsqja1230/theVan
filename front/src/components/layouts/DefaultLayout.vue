@@ -74,11 +74,12 @@
         <img src="@/assets/thevan.jpeg" style="width:200px">
     </div>
     <v-tabs show-arrows centered class="mb-1" color="dark" style="">
-        <v-tab @click="routePage('Model')">모델</v-tab>
+        <v-tab @click="routePage('Model','modelTitle')">모델</v-tab>
         <v-tab @click="routePage('Gallery')">갤러리</v-tab>
-        <v-tab @click="routePage('Customizing')">커스터마이징</v-tab>
-        <v-tab @click="routePage()">전시장</v-tab>
-        <v-tab @click="routePage('Contact')">문의</v-tab>
+        <!-- <v-tab @click="routePage('Customizing')">커스터마이징</v-tab> -->
+        <v-tab @click="routePage('Showroom')">전시장</v-tab>
+        <v-tab @click="routePage('Model','boardApplyTitle')">시승신청</v-tab>
+        <v-tab @click="routePage('Model','contactTitle')">문의</v-tab>
         <v-tab @click="routePage('Company')">회사소개</v-tab>
     </v-tabs>
     <!-- 컨텐츠 영역 -->
@@ -169,12 +170,13 @@
         clickSideMenu(name){
             this.$router.push({name: name, params: {}})
         },
-        routePage(pageName){
-            if(this.$route.name === 'Model' && pageName === 'Model'){
-                var location = document.querySelector("#modelTitle").offsetTop;
+        routePage(pageName, moveId){
+            let location = ""
+            if(this.$route.name === 'Model' && moveId){
+                location = document.querySelector(`#${moveId}`).offsetTop;
                 window.scrollTo({top:location, behavior:'smooth'});
             }else{
-                this.$router.push({name: pageName, params: {isMenu: true}})
+                this.$router.push({name: pageName, params: {isMenu: true, moveId:moveId}})
             }
         }
     },

@@ -14,6 +14,45 @@
     position: absolute;
     width: 100%;
 }
+.content-harfLayout {
+    width: calc(100%/2);
+    float: left;
+    padding: 50px;
+}
+
+/* 회사소개 메뉴 */
+.company-layout {
+    width: 80%;
+    padding: 5px;
+    margin:auto;
+}
+.company-intro-layout {
+    text-align: center;
+    margin-top: 20px;
+}
+.kakao-map-layout {
+    width: 100%;
+    height:350px;
+    margin-top: 20px;
+}
+
+/* 전시장 메뉴 */
+.showroom-container {
+    width: 100%;
+}
+.showroom-main-image {
+    width: 100%;
+    margin:auto;
+}
+.showroom-emp-container {
+    width: 80%;
+    margin:auto;
+}
+.showroom-emp-layout {
+    width: calc(100%/3);
+    padding: 5px;
+    float:left;
+}
 /*
 ##Device = Desktops
 ##Screen = 1281px to higher resolution desktops
@@ -37,6 +76,9 @@
     .main_carousel4 {
         display: none;
     }
+    .main_carousel5 {
+        display: none;
+    }
 }
     
 /*
@@ -51,15 +93,18 @@
         font-size: 14px;
     }
     .main_carousel1 {
-        display: block;
+        display: none;
     }
     .main_carousel2 {
-        display: none;
+        display: block;
     }
     .main_carousel3 {
         display: none;
     }
     .main_carousel4 {
+        display: none;
+    }
+    .main_carousel5 {
         display: none;
     }
 }
@@ -79,15 +124,31 @@
         display: none;
     }
     .main_carousel2 {
-        display: block;
+        display: none;
     }
     .main_carousel3 {
-        display: none;
+        display: block;
     }
     .main_carousel4 {
         display: none;
     }
+    .main_carousel5 {
+        display: none;
+    }
     .content-layout {
+        width: calc(100%/2);
+        padding: 5px;
+        float:left;
+    }
+    .content-harfLayout {
+        width: auto;
+        float: none;
+    }
+    .showroom-emp-container {
+        width: 90%;
+        margin:auto;
+    }
+    .showroom-emp-layout {
         width: calc(100%/2);
         padding: 5px;
         float:left;
@@ -112,14 +173,30 @@
         display: none;
     }
     .main_carousel3 {
-        display: block;
+        display: none;
     }
     .main_carousel4 {
+        display: block;
+    }
+    .main_carousel5 {
         display: none;
     }
     .content-layout {
         width: auto;
         float: none;
+    }
+    .content-harfLayout {
+        width: auto;
+        float: none;
+    }
+    .showroom-emp-container {
+        width: 100%;
+        margin:auto;
+    }
+    .showroom-emp-layout {
+        width: calc(100%/2);
+        padding: 5px;
+        float:left;
     }
 }
     
@@ -144,9 +221,24 @@
         display: none;
     }
     .main_carousel4 {
+        display: none;
+    }
+    .main_carousel5 {
         display: block;
     }
     .content-layout {
+        width: auto;
+        float: none;
+    }
+    .content-harfLayout {
+        width: auto;
+        float: none;
+    }
+    .showroom-emp-container {
+        width: 100%;
+        margin:auto;
+    }
+    .showroom-emp-layout {
         width: auto;
         float: none;
     }

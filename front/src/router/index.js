@@ -4,7 +4,7 @@ import Model from '../views/Model.vue'
 import Gallery from '../views/Gallery.vue'
 import Customizing from '../views/Customizing.vue'
 import Company from '../views/Company.vue'
-import Contact from '../views/Contact.vue'
+import Showroom from '../views/Showroom.vue'
 
 Vue.use(VueRouter)
 
@@ -35,8 +35,8 @@ Vue.use(VueRouter)
   },
   {
     path: '/',
-    name: 'Contact',
-    component: Contact,
+    name: 'Showroom',
+    component: Showroom,
     meta: {layout : 'DefaultLayout'}
   },
 ]

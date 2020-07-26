@@ -10,7 +10,35 @@
           <v-spacer></v-spacer>
         </v-toolbar>
         <div class="pa-15">
-           <v-carousel cycle height="600" class="">
+           <v-carousel cycle height="1000" class="main_carousel1">
+                <v-carousel-item
+                v-for="(item,i) in contents.imageArr"
+                :key="i"
+                :src="item"
+                ></v-carousel-item>
+            </v-carousel>
+            <v-carousel cycle height="600" class="main_carousel2">
+                <v-carousel-item
+                v-for="(item,i) in contents.imageArr"
+                :key="i"
+                :src="item"
+                ></v-carousel-item>
+            </v-carousel>
+            <v-carousel cycle height="500" class="main_carousel3">
+                <v-carousel-item
+                v-for="(item,i) in contents.imageArr"
+                :key="i"
+                :src="item"
+                ></v-carousel-item>
+            </v-carousel>
+            <v-carousel cycle height="400" class="main_carousel4">
+                <v-carousel-item
+                v-for="(item,i) in contents.imageArr"
+                :key="i"
+                :src="item"
+                ></v-carousel-item>
+            </v-carousel>
+            <v-carousel cycle height="300" class="main_carousel5">
                 <v-carousel-item
                 v-for="(item,i) in contents.imageArr"
                 :key="i"
@@ -18,7 +46,7 @@
                 ></v-carousel-item>
             </v-carousel>
         </div>
-        <div style="padding: 0px 100px 100px 100px;">
+        <div style="padding: 0px 50px 100px 50px;">
           <v-card class="mx-auto pb-5" max-width="600">
             <v-card-title style="font-size:1.5rem; font-weight:bold;">{{contents.carModel}}</v-card-title>
             <v-divider></v-divider>
