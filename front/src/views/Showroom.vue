@@ -49,12 +49,12 @@ export default {
         return {
             showroomSrc: require('@/assets/2468.jpg'),
             empItem : [
-                {image: require('@/assets/mainimg.png'), name: '신혁섭 부장'},
-                {image: require('@/assets/ggg.jpg'), name: '신혁섭 차장'},
-                {image: require('@/assets/2468.jpg'), name: '신혁섭 과장'},
-                {image: require('@/assets/3524.jpg'), name: '신혁섭 대리'},
-                {image: require('@/assets/2468.jpg'), name: '신혁섭 주임'},
-                {image: require('@/assets/ggg.jpg'), name: '신혁섭 사원'}
+                {image: require('@/assets/신혁섭.jpeg'), name: '신혁섭 부장'},
+                {image: require('@/assets/신혁섭.jpeg'), name: '신혁섭 차장'},
+                {image: require('@/assets/신혁섭.jpeg'), name: '신혁섭 과장'},
+                {image: require('@/assets/신혁섭.jpeg'), name: '신혁섭 대리'},
+                {image: require('@/assets/신혁섭.jpeg'), name: '신혁섭 주임'},
+                {image: require('@/assets/신혁섭.jpeg'), name: '신혁섭 사원'}
             ]
         }
     },
