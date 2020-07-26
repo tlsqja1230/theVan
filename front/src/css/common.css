@@ -143,6 +143,7 @@
     .content-harfLayout {
         width: auto;
         float: none;
+        padding: 0px;
     }
     .showroom-emp-container {
         width: 90%;
@@ -188,6 +189,7 @@
     .content-harfLayout {
         width: auto;
         float: none;
+        padding: 0px;
     }
     .showroom-emp-container {
         width: 100%;
@@ -233,6 +235,7 @@
     .content-harfLayout {
         width: auto;
         float: none;
+        padding: 0px;
     }
     .showroom-emp-container {
         width: 100%;
