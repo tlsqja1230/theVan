@@ -1,19 +1,23 @@
 <template>
     <v-container grid-list-xl fluid>
         <v-layout row wrap style="padding:0px 20px 20px 20px;">
-            <div class="company-layout" style="margin-top:100px;">
+            <div class="company-layout" style="">
                 <div class="company-intro-layout">
-                    <h1>The Van</h1>
+                    <v-img
+                        :src="require('@/assets/company.jpg')"
+                        height="400"
+                    >
+                    </v-img>
                     <div style="margin-top:50px;">
-                        <h3>벤츠 스프린터 공식 바디빌더 더밴 입니다.</h3>
-                        <h3>주식회사 더밴은 국내 최초 벤츠 스프린터 바디빌더로</h3>
-                        <h3>더밴의 창의적인 기술을 적용 다양한 스프린터를</h3>
-                        <h3>1:1 고객 맞춤형으로 100% 수제작 생산합니다.</h3>
-                        <h3>국내 최대 판매량과 전시장을 보유 중이며 최고의 A/S 서비스를 제공해드립니다.</h3>
+                        <h4>벤츠 스프린터 공식 바디빌더 더밴 입니다.</h4>
+                        <h4>주식회사 더밴은 국내 최초 벤츠 스프린터 바디빌더로</h4>
+                        <h4>더밴의 창의적인 기술을 적용 다양한 스프린터를</h4>
+                        <h4>1:1 고객 맞춤형으로 100% 수제작 생산합니다.</h4>
+                        <h4>국내 최대 판매량과 전시장을 보유 중이며 최고의 A/S 서비스를 제공해드립니다.</h4>
                     </div>
                 </div>
                 <div style="margin-top:100px;">
-                    <h1>위치</h1>
+                    <h1>찾아오시는 길</h1>
                 </div>
                 <div id="map" class="kakao-map-layout">
                 </div>

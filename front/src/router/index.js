@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Model from '../views/Model.vue'
 import Gallery from '../views/Gallery.vue'
-import Customizing from '../views/Customizing.vue'
+import Serivce from '../views/Serivce.vue'
 import Company from '../views/Company.vue'
 import Showroom from '../views/Showroom.vue'
 
@@ -23,8 +23,8 @@ Vue.use(VueRouter)
   },
   {
     path: '/',
-    name: 'Customizing',
-    component: Customizing,
+    name: 'Serivce',
+    component: Serivce,
     meta: {layout : 'DefaultLayout'}
   },
   {

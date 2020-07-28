@@ -1,6 +1,6 @@
 <template>
     <v-container grid-list-xl fluid>
-        <v-layout row wrap style="padding:0px 20px 20px 20px;">
+        <v-layout row wrap style="">
             <div class="showroom-container">
                 <div class="showroom-main-image">
                     <v-img
@@ -9,9 +9,12 @@
                         max-height="600px"
                     >
                     </v-img>
+                    <div style="margin:20px; text-align:center;">
+                        <h3>전시장 위치</h3> <h4 style="font-weight:normal;">서울특별시 강남구 헌릉로 570길 32-2</h4>
+                    </div>
                 </div>
-                <div style="width:100%; text-align:center; margin-top:100px; margin-bottom:20px;">
-                    <h1>전시장 팀 소개</h1>
+                <div style="width:100%; text-align:center; margin-top:50px; margin-bottom:20px;">
+                    <h1>구입문의</h1>
                 </div>
                 <div class="showroom-emp-container">
                     <div class="showroom-emp-layout" v-for="(item, index) in empItem" :key="index">
@@ -20,12 +23,14 @@
                             color="grey lighten-4"
                             width="300"
                         >
-                            <v-img
-                            :aspect-ratio="16/9"
-                            :src="item.image"
-                            height="400"
-                            ></v-img>
-                            <v-card-title>{{item.name}}</v-card-title>
+                            <div style="">
+                                <v-img
+                                :src="item.image"
+                                width="100"
+                                height="133"
+                                >
+                                </v-img>
+                            </div>
                         </v-card>
                     </div>
                 </div>
@@ -47,7 +52,7 @@ export default {
     },
     data() {
         return {
-            showroomSrc: require('@/assets/2468.jpg'),
+            showroomSrc: require('@/assets/showroom.jpg'),
             empItem : [
                 {image: require('@/assets/신혁섭.jpeg'), name: '신혁섭 부장'},
                 {image: require('@/assets/신혁섭.jpeg'), name: '신혁섭 차장'},

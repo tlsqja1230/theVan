@@ -1,35 +1,35 @@
 <template>
     <v-container grid-list-xl fluid>
-        <v-layout row wrap style="padding:0px 20px 20px 20px;">
-            <v-carousel cycle height="1000" class="main_carousel1">
+        <v-layout row wrap>
+            <v-carousel cycle height="600" class="main_carousel1" hide-delimiter-background >
                 <v-carousel-item
                 v-for="(item,i) in mainSrc"
                 :key="i"
                 :src="item.src"
                 ></v-carousel-item>
             </v-carousel>
-            <v-carousel cycle height="600" class="main_carousel2">
+            <v-carousel cycle height="500" class="main_carousel2" hide-delimiter-background >
                 <v-carousel-item
                 v-for="(item,i) in mainSrc"
                 :key="i"
                 :src="item.src"
                 ></v-carousel-item>
             </v-carousel>
-            <v-carousel cycle height="500" class="main_carousel3">
+            <v-carousel cycle height="400" class="main_carousel3" hide-delimiter-background >
                 <v-carousel-item
                 v-for="(item,i) in mainSrc"
                 :key="i"
                 :src="item.src"
                 ></v-carousel-item>
             </v-carousel>
-            <v-carousel cycle height="400" class="main_carousel4">
+            <v-carousel cycle height="300" class="main_carousel4" hide-delimiter-background >
                 <v-carousel-item
                 v-for="(item,i) in mainSrc"
                 :key="i"
                 :src="item.src"
                 ></v-carousel-item>
             </v-carousel>
-            <v-carousel cycle height="300" class="main_carousel5">
+            <v-carousel cycle height="300" class="main_carousel5" hide-delimiter-background >
                 <v-carousel-item
                 v-for="(item,i) in mainSrc"
                 :key="i"
@@ -38,17 +38,13 @@
             </v-carousel>
             <v-card style="width:100%; text-align:center;">
                 <div class="ma-5">
-                    <h1>THE VAN</h1><br>
                     <h3>주식회사 더밴은 국내 최초 벤츠 스프린터 바디빌더로<br>
-                        더밴의 창의적인 기술을 적용 다양한 스프린터를<br>
-                        1:1 고객 맞춤형으로 100% 수제작 생산합니다.<br>
-                        국내 최대 판매량과 전시장을 보유 중이며
-                        최고의 A/S 서비스를 제공해드립니다. 
+                        국내 최대 판매량과 전시장을 보유 중이며 최고의 A/S 서비스를 제공해드립니다. 
                     </h3>
                 </div>
             </v-card>
             
-            <div class="content-container" style="margin-top:100px;">
+            <div class="content-container" style="margin-top:20px;">
                 <div id="modelTitle">
                     <h1>Models</h1>
                 </div>
@@ -58,6 +54,7 @@
                         class="mx-auto"
                         color="grey lighten-4"
                         max-width="600"
+                        @click="openLayer(item)"
                         >
                         <v-img
                             :aspect-ratio="16/9"
@@ -66,10 +63,9 @@
                             <v-expand-transition>
                             <div
                                 v-if="hover"
-                                class="d-flex transition-fast-in-fast-out black darken-2 v-card--reveal display-3 white--text"
+                                class="d-flex transition-fast-in-fast-out white darken-2 v-card--reveal display-3 white--text"
                                 style="height: 100%;"
                             >
-                                {{item.carModel}}
                             </div>
                             </v-expand-transition>
                         </v-img>
@@ -77,87 +73,108 @@
                             class="pt-6"
                             style="position: relative;"
                             >
-                            <v-btn
-                            absolute
-                            class="black--text"
-                            large
-                            right
-                            top
-                            outlined
-                            >
-                                <h5>나만의 Van 만들기</h5>
-                            </v-btn>
                             <div class="font-weight-bolder black--text title mb-2">{{item.carModel}}</div>
                         </v-card-text>
                         </v-card>
                     </v-hover>
                 </div>
             </div>
-
-            <div class="content-harfLayout" style="margin-top:50px;">
-                <div id="boardApplyTitle">
-                    <h1>시승신청</h1>
+            <div class="content-container">
+                <div id="boardApplyTitle" class="content-harfLayout" style="margin-top:50px;">
+                    <v-card class="mx-auto" max-width="500">
+                        <v-img 
+                        :src="require('@/assets/board_apply.jpg')"
+                        @click="openEmailDialog('board')"
+                        >
+                            <v-btn
+                                absolute
+                                class="white--text"
+                                large
+                                right
+                                bottom
+                                outlined
+                                >
+                                    <h5>시승신청</h5>
+                                </v-btn>
+                        </v-img>
+                    </v-card>
+                    
+                    <!-- <v-card style="margin-top: 10px;">
+                        <v-card-text>
+                            <v-container>
+                                <v-row>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field v-model="name1" label="이름" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field v-model="email1" label="이메일" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field v-model="phoneNum1" label="연락처" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-select
+                                        :items="applyItem"
+                                        label="차종"
+                                        v-model="carModel1"
+                                        required
+                                        ></v-select>
+                                    </v-col>
+                                    <v-col cols="12">
+                                        <v-textarea v-model="message1" label="메시지를 입력하세요." required></v-textarea>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </v-card-text>
+                        <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="black darken-1" text @click="onClickApply('1')">제출하기</v-btn>
+                        </v-card-actions>
+                    </v-card> -->
                 </div>
-                <v-card style="margin-top: 10px;">
-                    <v-card-text>
-                        <v-container>
-                            <v-row>
-                                <v-col cols="12" sm="6">
-                                    <v-text-field label="이름" required></v-text-field>
-                                </v-col>
-                                <v-col cols="12" sm="6">
-                                    <v-text-field label="이메일" required></v-text-field>
-                                </v-col>
-                                <v-col cols="12" sm="6">
-                                    <v-text-field label="연락처" required></v-text-field>
-                                </v-col>
-                                <v-col cols="12" sm="6">
-                                    <v-select
-                                    :items="applyItem"
-                                    label="차종"
-                                    required
-                                    ></v-select>
-                                </v-col>
-                                <v-col cols="12">
-                                    <v-textarea label="메시지를 입력하세요." required></v-textarea>
-                                </v-col>
-                            </v-row>
-                        </v-container>
-                    </v-card-text>
-                    <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="black darken-1" text @click="onClickApply()">제출하기</v-btn>
-                    </v-card-actions>
-                </v-card>
-            </div>
-            <div class="content-harfLayout" style="margin-top:50px;">
-                <div id="contactTitle">
-                    <h1>문의</h1>
+                <div id="contactTitle" class="content-harfLayout" style="margin-top:50px;">
+                    <v-card class="mx-auto" max-width="500">
+                        <v-img 
+                            :src="require('@/assets/contact.jpg')"
+                            @click="openEmailDialog('contact')"
+                        >
+                            <v-btn
+                                absolute
+                                class="white--text"
+                                large
+                                right
+                                bottom
+                                outlined
+                                >
+                                    <h5>문의하기</h5>
+                                </v-btn>
+                        </v-img>
+                    </v-card>
+                    <!-- <v-card style="margin-top: 10px;">
+                        <v-card-text>
+                            <v-container>
+                                <v-row>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field v-model="name2" label="이름" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field v-model="email2" label="이메일" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field v-model="phoneNum2" label="연락처" required></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12">
+                                        <v-textarea v-model="message2" label="메시지를 입력하세요." required></v-textarea>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </v-card-text>
+                        <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="black darken-1" text @click="onClickApply('2')">제출하기</v-btn>
+                        </v-card-actions>
+                    </v-card> -->
                 </div>
-                <v-card style="margin-top: 10px;">
-                    <v-card-text>
-                        <v-container>
-                            <v-row>
-                                <v-col cols="12" sm="6">
-                                    <v-text-field label="이름" required></v-text-field>
-                                </v-col>
-                                <v-col cols="12" sm="6">
-                                    <v-text-field label="이메일" required></v-text-field>
-                                </v-col>
-                                <v-col cols="12" sm="6">
-                                    <v-text-field label="연락처" required></v-text-field>
-                                </v-col>
-                                <v-col cols="12">
-                                    <v-textarea label="메시지를 입력하세요." required></v-textarea>
-                                </v-col>
-                            </v-row>
-                        </v-container>
-                    </v-card-text>
-                    <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="black darken-1" text @click="onClickApply()">제출하기</v-btn>
-                    </v-card-actions>
-                </v-card>
             </div>
 
 
@@ -165,7 +182,7 @@
             <!-- 다이얼로그 -->
             <div class="text-center">
                 <v-dialog
-                v-model="dialog"
+                v-model="noticeDialog"
                 width="500"
                 >
                 <v-card>
@@ -190,7 +207,7 @@
                     <v-btn
                         color="primary"
                         text
-                        @click="dialog = false"
+                        @click="noticeDialog = false"
                     >
                         close
                     </v-btn>
@@ -198,14 +215,21 @@
                 </v-card>
                 </v-dialog>
             </div>
+
+            <ModelDialog v-if="isDialog" @dialogResult="dialogResult" :isDialog="isDialog" :contents="selItem"></ModelDialog>
+            <emailDailog v-if="emailDialog" @closeEmailDialog="closeEmailDialog" :emailDialog="emailDialog" :emailType="emailType"></emailDailog>
         </v-layout>
     </v-container>
 </template>
 
 <script>
+import ModelDialog from '@/components/common/ModelDialog.vue'
+import emailDailog from '@/components/common/emailDailog.vue'
 export default {
     name: 'Model',
     components: {
+        ModelDialog,
+        emailDailog
     },
     props: {
     },
@@ -223,20 +247,80 @@ export default {
     data() {
         return {
             mainSrc: [
-                { src: require('@/assets/mainimg.png')},
-                { src: require('@/assets/ggg.jpg')},
-                { src: require('@/assets/2468.jpg')},
-                { src: require('@/assets/3524.jpg')},
+                { src: require('@/assets/main_1.jpg')},
+                { src: require('@/assets/main_2.jpg')},
+                { src: require('@/assets/main_3.jpg')},
+                { src: require('@/assets/main_4.jpg')},
             ],
+            noticeDialog: false,
+
+
             modelsItem : [
-                {image: require('@/assets/2468.jpg'), carModel: '319 short body'},
-                {image: require('@/assets/mainimg.png'), carModel: '519 short body'},
-                {image: require('@/assets/ggg.jpg'), carModel: '519 long body'},
-                {image: require('@/assets/2468.jpg'), carModel: '캠핑카'},
-                {image: require('@/assets/3524.jpg'), carModel: '장외차량'},
-                {image: require('@/assets/ggg.jpg'), carModel: '카니발 하이리무진'}
+                {image: require('@/assets/modelMain_319.jpg'), carModel: '319 short body',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/modelMain_519.jpg'), carModel: '519 short body',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/modelMain_519ex.jpeg'), carModel: '519 long body',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/model_캠핑카.jpg'), carModel: '캠핑카',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/model_커스텀마이징.png'), carModel: '커스터마이징',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                },
+                {image: require('@/assets/model_카니발.jpg'), carModel: '카니발 하이리무진',
+                    imageArr: [
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/mainimg.png'),
+                        require('@/assets/ggg.jpg'),
+                        require('@/assets/2468.jpg'),
+                        require('@/assets/3524.jpg'),
+                        require('@/assets/ggg.jpg')
+                    ]
+                }
             ],
-            dialog: false,
+            isDialog: false,
+            selItem: {},
+            emailDialog: false,
+            emailType: ""
         }
     },
     beforeRouteEnter (to, from, next) {
@@ -249,12 +333,30 @@ export default {
             let location = document.querySelector(`#${this.$route.params.moveId}`).offsetTop;
             window.scrollTo({top:location, behavior:'smooth'});
         }else{
-            this.dialog = true
+            this.noticeDialog = true
         }
     },
     updated() {
     },
     methods: {
+        onClickApply(type){
+            console.log(type)
+            //백엔드 만들어서 ajax통신으로 nodemailer 사용해야함.
+        },
+        openLayer(item){
+            this.isDialog = true
+            this.selItem = item
+        },
+        dialogResult(){
+            this.isDialog = false
+        },
+        openEmailDialog(type){
+            this.emailDialog = true
+            this.emailType = type
+        },
+        closeEmailDialog(){
+            this.emailDialog = false
+        }
     },
 }
 </script>

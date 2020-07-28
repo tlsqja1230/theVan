@@ -80,6 +80,7 @@
         <v-tab @click="routePage('Showroom')">전시장</v-tab>
         <v-tab @click="routePage('Model','boardApplyTitle')">시승신청</v-tab>
         <v-tab @click="routePage('Model','contactTitle')">문의</v-tab>
+        <v-tab @click="routePage('Serivce')">서비스센터</v-tab>
         <v-tab @click="routePage('Company')">회사소개</v-tab>
     </v-tabs>
     <!-- 컨텐츠 영역 -->
@@ -100,11 +101,8 @@
          style="width:100%;"
         >
             <v-card-text class="white--text pt-5">
-                <h2>(주)더밴</h2><br>
-                대표자: 최영문<br>
-                위치: 서울특별시 강남구 헌릉로570길32-2 아이디타워<br>
-                전화번호: 1899-0260<br>
-                사업자등록번호: 102-81-29767<br>
+                대표자: 최영문 | 위치: 서울특별시 강남구 헌릉로570길32-2 아이디타워<br>
+                전화번호: 1899-0260 | 사업자등록번호: 102-81-29767<br>
             </v-card-text>
 
             <v-divider></v-divider>
